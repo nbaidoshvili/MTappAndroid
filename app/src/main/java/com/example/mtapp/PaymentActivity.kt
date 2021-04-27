@@ -46,10 +46,10 @@ class PaymentActivity : AppCompatActivity() {
 
         button.setOnClickListener {
 
-            writeError(typeError, typeInput, "^(amex|mastercard|visa)\$".toRegex())
+
             writeError(nameError, nameInput, "^([a-z]+\\s)+[a-z]+\$".toRegex())
 
-            if(typeError.text.isEmpty()){
+            if(writeError(typeError, typeInput, "^(amex|mastercard|visa)\$".toRegex()) == "valid"){
                 if(typeInput.text.toString().toLowerCase() == "amex"){
                     writeError(numberError, numberInput, "^[0-9]{15}\$".toRegex())
                     writeError(cvvError, cvvInput, "^[0-9]{4}\$".toRegex())
