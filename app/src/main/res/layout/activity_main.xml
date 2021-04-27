@@ -91,7 +91,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/transactionLayout"
+                app:layout_constraintEnd_toStartOf="@+id/vSeparator1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -121,6 +121,17 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/vSeparator1"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:background="#cccccc"
+                app:layout_constraintHeight_percent="0.8"
+                app:layout_constraintStart_toEndOf="@id/shipmentLayout"
+                app:layout_constraintEnd_toStartOf="@id/transactionLayout"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -128,8 +139,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/spendingLayout"
-                app:layout_constraintStart_toEndOf="@+id/shipmentLayout"
+                app:layout_constraintEnd_toStartOf="@id/vSeparator2"
+                app:layout_constraintStart_toEndOf="@+id/vSeparator1"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.textview.MaterialTextView
@@ -157,13 +168,25 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/vSeparator2"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:background="#cccccc"
+                app:layout_constraintHeight_percent="0.8"
+                app:layout_constraintStart_toEndOf="@id/transactionLayout"
+                app:layout_constraintEnd_toStartOf="@id/spendingLayout"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/spendingLayout"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/transactionLayout"
+                app:layout_constraintStart_toEndOf="@+id/vSeparator2"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.textview.MaterialTextView
@@ -200,8 +223,7 @@
             android:id="@+id/paymentLayout"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:elevation="10dp"
-            app:layout_constraintBottom_toTopOf="@id/mapLayout"
+            app:layout_constraintBottom_toTopOf="@id/hSeparator1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/stsLayout"
@@ -215,7 +237,6 @@
                 android:layout_height="match_parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/paymentText"
-                app:layout_constraintHorizontal_chainStyle="spread_inside"
                 app:layout_constraintHorizontal_weight="1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -249,14 +270,26 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/hSeparator1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="#cccccc"
+            app:layout_constraintWidth_percent="0.8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/paymentLayout"
+            app:layout_constraintBottom_toTopOf="@id/mapLayout"/>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/mapLayout"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@id/appLayout"
+            app:layout_constraintBottom_toTopOf="@id/hSeparator2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/paymentLayout"
+            app:layout_constraintTop_toBottomOf="@+id/hSeparator1"
             app:layout_constraintVertical_weight="1"
             app:layout_constraintWidth_percent="0.8">
 
@@ -289,11 +322,11 @@
             <TextView
                 android:id="@+id/mapArrow"
                 android:layout_width="0dp"
-                android:textColor="#ff8d03"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:textSize="15sp"
                 android:text="Map"
+                android:textAlignment="center"
+                android:textColor="#ff8d03"
+                android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_weight="1"
@@ -302,6 +335,18 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/hSeparator2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="#cccccc"
+            app:layout_constraintWidth_percent="0.8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mapLayout"
+            app:layout_constraintBottom_toTopOf="@id/appLayout"/>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/appLayout"
             android:layout_width="0dp"
@@ -309,7 +354,7 @@
             app:layout_constraintBottom_toTopOf="@id/loButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/mapLayout"
+            app:layout_constraintTop_toBottomOf="@+id/hSeparator2"
             app:layout_constraintVertical_weight="1"
             app:layout_constraintWidth_percent="0.8">
 
@@ -364,6 +409,7 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/appLayout"
             app:layout_constraintVertical_weight="1" />
