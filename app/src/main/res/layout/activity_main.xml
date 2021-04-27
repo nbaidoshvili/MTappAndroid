@@ -311,7 +311,7 @@
                 android:layout_height="wrap_content"
                 android:paddingStart="15dp"
                 android:paddingEnd="15dp"
-                android:text="1600 Pennsylvania Avenue NW, Washington, DC"
+                android:text="1600 Pennsylvania Avenue, Washington, DC"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/mapArrow"
